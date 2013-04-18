@@ -1,0 +1,49 @@
+\section{\acf{ULL}}
+\label{sec:ull}
+
+\subsection{notes}
+
+Connect PMOS and NMOS transistors by their sources rather than by their drains.
+Biases Vgs negatively, pushing Ioff down to physical limit.
+
+
+\begin{itemize}
+
+\item Pros:
+
+\begin{itemize}
+
+\item Analogue and digital compatible
+\item Simple to design
+\item High efficiency
+\item Speed relatively unaffected
+\item Factor saving in $I_{off}$ of 100-10000 \cite{ULL-AandD}
+
+\end{itemize}
+
+\item Cons:
+
+\begin{itemize}
+
+\item Increases size, each transistor becomes 2 \cite{ULL-AandD}
+
+\end{itemize}
+
+\end{itemize}
+
+\subsection{Design}
+
+Of the two main forms of loss in CMOS logic, switching and leakage currents, \ac{ULL} works to reduce the leakage currents down to the physical limits of the device.
+
+It is often forgotten in CMOS design that there is not only digital circuitry, but also analogue components as well, as these are required to interface with the physical world.
+\citeauthor{ULL-AandD} help address this by producing a number of analogue components, as well as digital ones.
+Among their designs are voltage followers, transistors, and diodes.
+
+Initially a pair of N and P channel MOSFETs are selected with appropriate $V_{Th}$ values such that their $I_{D}-V_{GS}$ curves intersect at a low current.
+These transistors are then connected up in such a way that the P-channel and N-channel transistors are connected by their sources.
+This is contradictory to the standard arrangement of transistors, where the transistors would connect via their drains.
+The effect of connecting the transistors up this way is that the
+
+
+\subsection{Variations}
+

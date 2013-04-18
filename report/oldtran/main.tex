@@ -1,17 +1,31 @@
 \documentclass{IEEEtran}
+\usepackage[numbers]{natbib}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{acronym}
 
 \author{Thomas Scarsbrook}
-\title{Thingy McThingy}
+\title{Ultra-Low Power Logic for Energy Harvesting Systems}
 \date{\today}
 
 \begin{document}
 
 \maketitle
+\input{acronyms}
 
-\abstract{\input{abstract}}
+\begin{abstract}
+\input{abstract}
+\end{abstract}
 
 \input{intro}
 
+\input{subthresh}
+\input{adiabatic}
+\input{ull}
+
 \input{conclusion}
+
+\bibliographystyle{IEEEtranN}
+\bibliography{../../sources}
 
 \end{document}
