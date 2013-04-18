@@ -1,5 +1,23 @@
+\section{Introduction}
+\label{sec:intro}
 There are many systems where processing ability comes second to power usage.
-Sensor, and energy harvesting systems fall well inside this category.
+Sensor systems, and energy harvesting systems fall well inside this category.
 In the majority of lower power systems in use, such as mobile devices, power availability is large, however energy availability is limited - the system can draw a large amount of current from the battery at any time, however when the battery runs out of power the system fails.
 In the systems focussed on in this report, energy availability is essentially infinite, however available current draw at any one time is minimal.
 Due to these restrictions various technologies have to be utilised to maximise power usage and still provide reasonable processing capabilities.
+
+There are a variety of different energy harvesting mechanisms available and in use in modern systems.
+These suffer from many issues of energy availability, for instance any sensing or control electronics should not significantly cut down the supplied power.
+In sensing applications the energy harvesting does not want to affect the values under test, and as such supplied power can be incredibly low \cite{ExperimentalHybridVibration,CMAirTurbine}.
+\cite{ExperimentalHybridVibration} discuss a system whereby as little as 57.2\textmu J are generated over a 30 second period, this equates to less than 2\textmu W of power.
+This is enough to power a single CMOS inverter using ultra-low-leakage technology, as \citeauthor{ULL-AandD} \cite{ULL-AandD} states that the inverters require 1.1\textmu W.
+
+In standard CMOS designs energy is lost through switching and leakage currents.
+Leakage current is the current that passes from the channel in the transistors through to the gate, ``leaking'' across the junction.
+Energy lost through switching happens when the gate changes state.
+Due to the fast switching nature of the logic, there are time when the entire power supply voltage is across the channel of the transistor.
+This results in a large current flow through the transistor, and a large heat dissipation.
+This heat dissipation uses up a lot of energy.
+
+In this report three main forms of energy saving techniques are described and compared, and variations on each type are also looked at.
+Section \ref{sec:subthresh} looks at the use of sub-threashold logic, section \ref{sec:adiabatic} looks at adiabatic logic and energy recovery, and section \ref{sec:ull} looks at ultra-low-leakage logic.

@@ -2,7 +2,7 @@
 
 all:
 	pdflatex main
-	#bibtex sources.bib
+	bibtex main
 	pdflatex main
 	pdflatex main
 
