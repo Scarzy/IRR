@@ -35,6 +35,9 @@ Limits maximum performance of circuit.
 
 \subsection{Design}
 Sub-threshold logic works by reducing the supply voltage to below the threshold voltage of the transistors.
-This works for bipolar designs, as it uses the leakage current from gate to source as the switching current in the device.
+This uses the leakage current from gate to source as the switching current in the device \cite{ULPSubThresh}.
+As the leakage current is exponentially related to the gate voltage, reducing the voltage to below the devices threshold voltage results in the leakage current being greatly reduced.
+The knock-on effect of this is an exponential increase in delay can be expected.
+
 
 \subsection{Variations}
