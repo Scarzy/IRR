@@ -1,43 +1,52 @@
 \section{Sub-Threshold Logic}
 \label{sec:subthresh}
 
-
-
-\subsection{notes}
-
-Operates by using leakage current as operating switching current.
-Limits maximum performance of circuit.
-
-\begin{itemize}
-
-\item{Pros:}
-
-\begin{itemize}
-
-\item{Increased gm}
-\item{near-ideal static noise margin}
-\item{exponential power saving}
-
-\end{itemize}
-
-\item{Cons:}
-
-\begin{itemize}
-
-\item{more sensitive to power supply noise}
-\item{more sensitive to temperature}
-\item{more sensitive to process variations}
-\item{exponential increase in delay}
-
-\end{itemize}
-
-\end{itemize}
-
 \subsection{Design}
 Sub-threshold logic works by reducing the supply voltage to below the threshold voltage of the transistors.
 This uses the leakage current from gate to source as the switching current in the device \cite{ULPSubThresh}.
+The main form of current flow in the transistor is the current flowing between the drain and the source.
+In subthreshold systems the transistor is in very weak inversion, which means that the channel between the drain and source which is normally open in standard CMOS logic is closed off.
+This results in a fraction of the normal current flow than would normally be experienced, this is the `leakage' current.
 As the leakage current is exponentially related to the gate voltage, reducing the voltage to below the devices threshold voltage results in the leakage current being greatly reduced.
 The knock-on effect of this is an exponential increase in delay can be expected.
 
+The increase in the delay makes subthreshold logic very good for applications which require bursts of computation, spread out over a long period of time.
+An example of this can be seen in figure \ref{fig:burstST}.
+The upper waveform shows the activity status of a standard CMOS logic gate operating in bursts, when the waveform is at the high level the transistor is active and when the waveform shows low the transistor is inactive.
+The lower waveform relates to the activity of a subthreshold circuit.
+Under these conditions the standard CMOS logic operates over a time $T$, in this way it rapidly completes the computation and then sits idle, until time $T'$ has passed at which point the computation begins again.
+The subthreshold logic, needing longer to complete the calculation, is slowed to take the entiriy of $T'$ to complete.
+As such it achieves a large power reduction while providing the same throughput as its standard CMOS equivalent \cite{IEEEVLSIRobustSTL,ULPSubThresh}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\columnwidth]{../../images/burstycomputation.png}
+	\caption{Bursty computation and its relevance to subthreshold operation \cite{IEEEVLSIRobustSTL}}
+	\label{fig:burstST}
+\end{figure}
+
+In addition to the power saving there are a number of other advantages that subthreshold logic gives.
+One of these is an increase in the transconductance gain $gm$ of the device.
+Under subthreshold operation the relationship between $V_{gs}$, the voltage across the gate and source, and $I_{ds}$, the current between drain and source, becomes exponential \cite{ULPSubThresh}.
+As transconductance gain is defined as $gm = \frac{I_{ds}}{V_{gs}}$, the exponential relationship results in the transconductance gain becoming very large.
+Additionally the static noise margin of the device is improved to almost ideal levels.
+
+Furthermore, there are some additional costs in order to achieve the desired power savings.
+The devices sensitivity to the temperature, process variations, and power supply noise increases.
+As shown in figure \ref{fig:VgsIds} as $V_{gs}$ increases so does the current $I_{ds}$, however the device then enters saturation region at which point $I_{ds}$ levels out.
+In this mode of operation, when there is variation on the power supply $V_{gs}$ also varies, however there is minimal change in $I_{ds}$.
+With subthreshold logic, the device is operating in the triode region where a change in $V_{gs}$ results in a large change in $I_{ds}$, as such the transconductance gain with respect to the power supply has increased.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\columnwidth]{../../images/vgsvsids.png}
+	\caption{$V_{gs}$ vs. $I_{ds}$ \cite{SemiEmpiricalModels}}
+	\label{fig:VgsIds}
+\end{figure}
 
 \subsection{Variations}
+\subsubsection{Variable Voltage}
+
+
+\subsubsection{Dynamic Voltage}
+
