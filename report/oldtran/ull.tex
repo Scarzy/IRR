@@ -3,29 +3,15 @@
 
 \subsection{notes}
 
-Connect PMOS and NMOS transistors by their sources rather than by their drains.
-Biases Vgs negatively, pushing Ioff down to physical limit.
-
-
+\nocite{*}
 \begin{itemize}
 
 \item Pros:
 
 \begin{itemize}
 
-\item Analogue and digital compatible
-\item Simple to design
 \item High efficiency
 \item Speed relatively unaffected
-\item Factor saving in $I_{off}$ of 100-10000 \cite{ULL-AandD}
-
-\end{itemize}
-
-\item Cons:
-
-\begin{itemize}
-
-\item Increases size, each transistor becomes 2 \cite{ULL-AandD}
 
 \end{itemize}
 
@@ -37,13 +23,26 @@ Of the two main forms of loss in CMOS logic, switching and leakage currents, \ac
 
 It is often forgotten in CMOS design that there is not only digital circuitry, but also analogue components as well, as these are required to interface with the physical world.
 \citeauthor{ULL-AandD} help address this by producing a number of analogue components, as well as digital ones.
-Among their designs are voltage followers, transistors, and diodes.
+Among their designs are voltage followers, transistors, and diodes, as seen in figure \ref{fig:ulldevices}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\columnwidth]{../../images/ULLdevices.png}
+	\caption{A selection of devices exploiting ultra-low leakage. (a) Voltage Follower, (b) Transistor, (c) Diode \cite{DisruptiveULL}}
+	\label{fig:ulldevices}
+\end{figure}
 
 Initially a pair of N and P channel MOSFETs are selected with appropriate $V_{Th}$ values such that their $I_{D}-V_{GS}$ curves intersect at a low current.
 These transistors are then connected up in such a way that the P-channel and N-channel transistors are connected by their sources.
 This is contradictory to the standard arrangement of transistors, where the transistors would connect via their drains.
-The effect of connecting the transistors up this way is that the
+The effect of connecting the transistors up this way is that the circuit biases itself automatically, such that the sum of the $V_{gs}$'s of the two transistors is equal to the voltage across the devices, and that the current through the two devices is equal.
+This also produces the effect that as the device characteristics vary with temperature, the two transistors act to counter each other keeping the gate bias constant.
 
+As a reverse voltage is placed across the terminals of a \ac{ULL} structure, the self biasing effect brings in another aspect by which it decreases the NMOS $V_{gs}$ while increasing the PMOS $V_{gs}$.
+This causes the reverse current for the transistor to be reduced below its off current right down towards its leakage current.
+A similar effect is seen when the power rail voltage is increased, initially the off current through the devices increases, however the gates then bias themselves causing the off current to drastically reduce.
+This can result in reductions of the off current of a factor from 100 to 10000+ when compared to standard CMOS \cite{ULL-AandD,DisruptiveULL}.
+The value of this factor depends on the physical leakage limit of the device.
 
-\subsection{Variations}
-
+The simplistic design of these circuits means that only standard CMOS processes are required in production, however it results in each transistor in a standard logic circuit effectively becoming two.
+This obviously has a significant effect on the area required for the design.
