@@ -1,22 +1,6 @@
 \section{\acf{ULL}}
 \label{sec:ull}
 
-\subsection{notes}
-
-\nocite{*}
-\begin{itemize}
-
-\item Pros:
-
-\begin{itemize}
-
-\item High efficiency
-\item Speed relatively unaffected
-
-\end{itemize}
-
-\end{itemize}
-
 \subsection{Design}
 
 Of the two main forms of loss in CMOS logic, switching and leakage currents, \ac{ULL} works to reduce the leakage currents down to the physical limits of the device.
@@ -46,3 +30,6 @@ The value of this factor depends on the physical leakage limit of the device.
 
 The simplistic design of these circuits means that only standard CMOS processes are required in production, however it results in each transistor in a standard logic circuit effectively becoming two.
 This obviously has a significant effect on the area required for the design.
+Additionally, the nature of the low leakage current at high reverse voltage makes the designs highly efficient, especially so in the diode configuration.
+\citeauthor{DisruptiveULL} suggest a efficiency increase from 10.47\% to 79.92\% against standard CMOS, at a speed of over 13MHz \cite{DisruptiveULL}.
+This also shows a further advantage involved in ULL designs, the simplistic design leads rise to the systems being largely unaffected with regards to speed of processing.
