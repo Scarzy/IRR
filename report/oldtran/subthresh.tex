@@ -77,4 +77,21 @@ While this approach introduces stability into the subthreshold logic, it increas
 \end{figure}
 
 \subsubsection{Dynamic Voltage}
+Dynamic threshold voltage CMOS, or Sub-DTMOS, is an attempt to achieve the same stability as provided by VT-Sub-CMOS but without the expense of complex circuitry.
+In order to achieve this the substrate of each transistor is directly connected to its gate.
+This causes the threshold voltage to change to suit the state of the transistor.
+At zero bias the threshold voltage is high, and when $V_{gs}$ is equal to the high voltage level the threshold voltage is low.
+This is caused by the body effect of the transistor \cite{DTMOSToE}.
+In standard CMOS the threshold voltage is high, as it tracks the body-source bias.
+In a Sub-DTMOS configuration the body-source junction is forward biased, this draws the threshold voltage down.
+When the threshold voltage is at its minimum the charge on the body is at its minimum, the lower charge results in a higher electron mobility.
+This higher mobility comes about because the lower charge reduces the normal field in the substrate, allowing the carriers to move less impeded.
+The effect of this is to give the device a higher on current, resulting in greater gain but at the cost of a greater power consumption.
 
+Increased power consumption is not the only cost of the Sub-DTMOS design, it also results in a higher gate capacitance than would be experienced in normal CMOS logic.
+However, this effect is countered as the higher on current causes the capacitance to gain and lose charge quicker.
+This increase in on current far outweighs the increase in capacitance, and as such the Sub-DTMOS logic is able to operate faster than even standard CMOS \cite{IEEEVLSIRobustSTL}.
+
+The Sub-DTMOS logic was simulated under SPICE and showed a higher resilience to temperature with respect to the delay, requiring less delay than VT-Sub-CMOS.
+This, in addition to the area saved due to the lower complexity of the design.
+However this comes at the expense of a higher power draw.
