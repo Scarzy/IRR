@@ -7,6 +7,6 @@ all:
 	pdflatex main
 
 clean:
-	rm -rf *.aux *.pdf *.toc *.log
+	rm -rf *.aux *.pdf *.toc *.log *.bbl *.blg
 
 .PHONY: all
