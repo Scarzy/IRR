@@ -46,7 +46,35 @@ With subthreshold logic, the device is operating in the triode region where a ch
 
 \subsection{Variations}
 \subsubsection{Variable Voltage}
+In \cite{IEEEVLSIRobustSTL} \citeauthor{IEEEVLSIRobustSTL} attempt to improve subthreshold designs so that they are less susceptible to a number of the side effects experienced in standard subthreshold operation.
+Variable Voltage Subthreshold CMOS (VT-Sub-CMOS) logic is an attempt to reduce the effect of temperature and process variations.
 
+VT-Sub-CMOS works by having a stabilisation circuit involved which adjusts the bias applied to the substrate of the transistors, as shown in figure \ref{fig:vtsubcmos}.
+This stabilisation circuit consists of two key parts, the leakage current monitor, and the self-substrate bias.
+The leakage current monitor acts like a current sensor, and monitors the amount of leakage current flowing through the transistor.
+An output voltage is produced which is then passed into the self-substrate bias.
+The self-substrate bias then determines an appropriate bias voltage to apply to the substrates.
+As this bias voltage then corrects the leakage current a closed loop is formed and the circuit is held stable.
+
+The stabilisation circuitry relies on the basis that the temperature and process variations will be fairly constant across the device, or at least across a small area.
+To form the leakage current monitor a transistor is placed in series with a resistance, and the two are then connected between the two power rails, with the gate of the transistor connected to the appropriate power rail to bring it into saturation.
+An output voltage is then taken from the centre point of the potential divider that is formed, which is then fed into the self-substrate bias block.
+The NMOS and PMOS transistors require separate leakage current mirrors, and hence separate stabilisation circuitry, as production of the two transistor types vary and hence they may experience different process variations.
+The self-substrate bias then contains a ring oscillator with an enable controlled by the leakage current monitor's output.
+The output of this ring oscillator operates a charge pump which builds a charge on the substrates.
+As such this stabilisation circuitry acts to rebuild the charge whenever it falls below a defined value.
+
+SPICE simulations show that this VT-Sub-CMOS logic stays stable as the temperature changes \cite{IEEEVLSIRobustSTL}, effectively bringing the threshold voltage down to just below the supply voltage.
+This removes the exponential relationship between $V_{gs}$ and $I_{ds}$, reducing the sensitivity to temperature variations.
+The delay required between switching is also greatly reduced, meaning that the system can operate at a higher frequency.
+While this approach introduces stability into the subthreshold logic, it increases the circuit complexity, and hence also increases the area.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\columnwidth]{../../images/vtsubcmos.png}
+	\caption{The stabilisation scheme used in VT-Sub-CMOS \cite{IEEEVLSIRobustSTL}}
+	\label{fig:vtsubcmos}
+\end{figure}
 
 \subsubsection{Dynamic Voltage}
 
