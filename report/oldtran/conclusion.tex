@@ -1,1 +1,25 @@
 \section{Conclusion}
+
+In this report a number of different low power technologies have been discussed, with particular emphasis on those that provided ultra low power usage at the expense of processing speed and ability.
+It has been discussed that there are two main forms of loss in CMOS logic transistors, namely switching and leakage currents.
+All the technologies discussed worked to reduce one of these two losses as significantly as possible. 
+
+Subthreshold logic works to reduce the leakage current by operating at a low supply voltage, and hence using the leakage current as the switching current in the device.
+This results in a very low power usage, however at the expensive of requiring a long delay in order to build up the appropriate charge for the next stage to be operated.
+Given the circumstances that this report was focussing on, technologies that provide the power savings given that low processing ability is required, this is not necessarily a hugely significant issue, however would ultimately depend on application.
+A couple of variations were considered, one which improves the robustness of the technology to temperature and process variations at the expense of circuit complexity, another which provides small improvements in robustness and design simplicity at the expense of power consumption.
+In contrast ultra-low leakage technologies work to reduce the same current, however do not require such a long delay.
+This works by creating an automatically self-biasing circuit which biasses itself to force the drain-source current to reduce down to the physical limits.
+However the price paid was for an increase in area.
+This price is similar to that involved with VT-Sub-CMOS designs, whereby a complex circuit is required in order to ensure the logic stayed stable.
+
+Adiabatic logic works to reduce the current lost when the transistors switch and create a short between the power rails.
+This has the advantage of large savings in the power lost, with factors of 10-20, while having a slowing effect on the system.
+Further to this it requires a complex clocking circuitry in order to achieve the savings.
+
+For all the technologies, there are still losses involved, some of which can be remedied through the use of additional circuitry.
+One possible form of circuit to achieve these additional savings is a charge recovery circuit, which returns charge back to the power rails.
+
+As can be seen a variety of technologies are available for power reduction, with their various advantages and disadvantages.
+Which one will be ideal will depend heavily of the application to which it is to be put, with some deciding factors being the area available, the rate of throughput required, and the processing speed.
+This decision must be left to the designer, however a number of options are presented here.
