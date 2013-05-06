@@ -21,6 +21,14 @@ These transistors are then connected up in such a way that the P-channel and N-c
 This is contradictory to the standard arrangement of transistors, where the transistors would connect via their drains.
 The effect of connecting the transistors up this way is that the circuit biases itself automatically, such that the sum of the $V_{gs}$'s of the two transistors is equal to the voltage across the devices, and that the current through the two devices is equal.
 This also produces the effect that as the device characteristics vary with temperature, the two transistors act to counter each other keeping the gate bias constant.
+This is shown in figure \ref{fig:ullintersect}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\columnwidth]{../../images/intersectiongraph.png}
+	\caption{A graph showing the autobiasing of $V_{gs}$ as temperature changes \cite{DisruptiveULL}}
+	\label{fig:ullintersect}
+\end{figure}
 
 As a reverse voltage is placed across the terminals of a \ac{ULL} structure, the self biasing effect brings in another aspect by which it decreases the NMOS $V_{gs}$ while increasing the PMOS $V_{gs}$.
 This causes the reverse current for the transistor to be reduced below its off current right down towards its leakage current.
