@@ -19,24 +19,24 @@ Further to this it requires a complex clocking circuitry in order to achieve the
 
 A comparison of the three technologies can be seen in table \ref{tab:comparison}.
 
-\begin{table}[htbp]
-%	\centering
-	\begin{tabular}[width=\columnwidth]{| p{70px} | p{60px} | p{60px} | p{60px} |}
+\begin{table*}[htbp]
+	\centering
+	\begin{tabular}[width=\columnwidth]{| l | l | l | l |}
 		\hline
-					& Sub-Threshold			& Adiabatic		& ULL					\\
+					& Sub-Threshold			& Adiabatic		& ULL					\\ &&& \\
 		\hline
-		Variable reduced	& Leakage current		& Switching current	& Leakage current			\\
-		Form of change		& Reduced operating voltage	& Slowed switching	& Create self-biasing reverse diodes	\\
-		Saving factor 		& $~1000\times$			& $10-20\times$		& $100-10000\times$			\\
-		Operating frequency	& $175KHz$			& $\textless 1GHz$	& $13.56MHz$				\\
-		Area increase (direct)	& $0$				& $0$			& $~2\times$				\\
+		Variable reduced	& Leakage current		& Switching current	& Leakage current			\\ &&& \\
+		Form of change		& Reduced operating voltage	& Slowed switching	& Create self-biasing reverse diodes	\\ &&& \\
+		Saving factor 		& $~1000\times$			& $10-20\times$		& $100-10000\times$			\\ &&& \\
+		Operating frequency	& $175KHz$			& $\textless 1GHz$	& $13.56MHz$				\\ &&& \\
+		Area increase (direct)	& $0$				& $0$			& $~2\times$				\\ &&& \\
 		Additional circuitry	& None				& Clocking circuitry	& None					\\
 					& 				& Energy recovery	& 					\\
 		\hline 
 	\end{tabular}
 	\caption{A comparison of the various technologies}
 	\label{tab:comparison}
-\end{table}
+\end{table*}
 
 For all the technologies, there are still losses involved, some of which can be remedied through the use of additional circuitry.
 One possible form of circuit to achieve these additional savings is a charge recovery circuit, which returns charge back to the power rails.
