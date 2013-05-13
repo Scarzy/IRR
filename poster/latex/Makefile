@@ -2,7 +2,7 @@
 
 all:
 	pdflatex poster
-	#bibtex poster
+	bibtex poster
 	pdflatex poster
 	pdflatex poster
 
