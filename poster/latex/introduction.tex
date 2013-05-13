@@ -12,3 +12,24 @@ There are two main forms of low power designs, one suited for batteries, one sui
 		\item Theoretically infinite energy
 	\end{itemize}
 \end{itemize}
+
+Energy harvesting systems often require processing at minimal power expense.
+They often run minimalistic tasks, designed to monitor the harvesting system.
+Because their source of energy is the same source as is being harvested, the supply can be very small (possibly less than $2\mu W$).
+As such, the logic has to operate with minimal draw, as otherwise it will run out of charge and fail, or it will negate the energy source.
+
+There are two main forms of loss in logic circuits, leakage current and switching current.
+\\
+Leakage current
+\begin{itemize}
+	\item In transistors current flows between drain and source
+	\item Is a small current, but is constant
+	\item This is required for correct operation, however current is often larger than it needs to be
+\end{itemize}
+
+Switching current
+\begin{itemize}
+	\item During switching all transistors can be momentarily turned on
+	\item Large currents can flow
+	\item Energy dumped straight from supply to ground
+\end{itemize}
